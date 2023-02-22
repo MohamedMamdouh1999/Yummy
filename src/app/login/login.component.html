@@ -1,0 +1,31 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 1)" template="<img class='w-100 rounded-1' src='https://media.giphy.com/media/d05PVYaUl7DtCSE3ht/giphy-downsized-large.gif'/>"></ngx-spinner>
+<section>
+  <form class="w-75 py-5 text-center mx-auto" [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+    <h2 class="h1 text-white pb-3">Login</h2>
+    <div class="row gy-4">
+      <div class="col-12">
+        <div class="border-bottom">
+          <input formControlName="email" class="form-control text-white bg-black border-0 rounded-0 shadow-none" type="email" placeholder="Email">
+          <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors">
+            <p *ngIf="loginForm.get('email')?.getError('required')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Email is required</p>
+            <p *ngIf="loginForm.get('email')?.getError('email')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Email format is invalid</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 pb-3">
+        <div class="border-bottom">
+          <input formControlName="password" class="form-control text-white bg-black border-0 rounded-0 shadow-none" type="password" placeholder="Password">
+          <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors">
+            <p *ngIf="loginForm.get('password')?.getError('required')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Password is required</p>
+            <p *ngIf="loginForm.get('password')?.getError('pattern')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Password is invalid</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="response" [ngClass]="{'text-success': response === 'success', 'text-danger': response !== 'success'}"><i class="fa-solid fa-triangle-exclamation"></i> {{response}}</p>
+    <button [disabled]="loginForm.invalid || isLoading" type="submit" class="btn btn-outline-danger rounded-1 px-4 mt-3">
+      <span *ngIf="!isLoading">Login</span>
+      <i *ngIf="isLoading" class="fa-solid fa-gear fa-spin"></i>
+    </button>
+  </form>
+</section>

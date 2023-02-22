@@ -1,0 +1,54 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+}
+p,h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.fillVoid {
+  height: 56.42px;
+}
+.area {
+  cursor: pointer;
+}
+.meal {
+  cursor: pointer;
+}
+.mealName {
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: top .5s;
+  height: 100%;
+  width: 100%;
+  top: 110%;
+  left: 0;
+}
+.meal:hover .mealName {
+  top: 0;
+}
+.mealTitle {
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+@media screen and (min-width:576px) {
+  .mealTitle {
+    font-size: 39px;
+  }
+}
+@media screen and (max-width:575px) {
+  .mealTitle {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width:300px) {
+  .mealTitle {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,38 @@
+nav {
+  background-color: white;
+}
+nav,
+.fa-bars,
+.nav-link {
+  color: #212529;
+}
+img {
+  width: 35px;
+}
+.navbar-toggler {
+  box-shadow: none;
+  border: none;
+}
+.fa-bars {
+  font-size: 30px;
+}
+.icons li {
+  padding: 0 10px;
+  font-size: 20px;
+}
+.icons li i {
+  cursor: pointer;
+  transition: color .4s;
+}
+.fa-facebook-f:hover {
+  color: #1877f2;
+}
+.fa-twitter:hover {
+  color: #1da1f2;
+}
+.fa-instagram:hover {
+  color: #fd1d1d;
+}
+.fa-whatsapp:hover {
+  color: #25d366;
+}

@@ -1,0 +1,61 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 1)" template="<img class='w-100 rounded-1' src='https://media.giphy.com/media/d05PVYaUl7DtCSE3ht/giphy-downsized-large.gif'/>"></ngx-spinner>
+<section>
+  <form class="w-75 py-5 text-center mx-auto" [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+    <h2 class="h1 text-white pb-3">Sign Up</h2>
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <div class="border-bottom">
+          <input formControlName="first_name" class="form-control text-white bg-black border-0 rounded-0 shadow-none" type="text" placeholder="First Name">
+          <div *ngIf="registerForm.get('first_name')?.touched && registerForm.get('first_name')?.errors">
+            <p *ngIf="registerForm.get('first_name')?.getError('required')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> First Name is required</p>
+            <p *ngIf="registerForm.get('first_name')?.getError('minlength')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> First Name minlength is 3</p>
+            <p *ngIf="registerForm.get('first_name')?.getError('maxlength')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> First Name maxlength is 10</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="border-bottom">
+          <input formControlName="last_name" class="form-control text-white bg-black border-0 rounded-0 shadow-none" type="text" placeholder="Last Name">
+          <div *ngIf="registerForm.get('last_name')?.touched && registerForm.get('last_name')?.errors">
+            <p *ngIf="registerForm.get('last_name')?.getError('required')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Last Name is required</p>
+            <p *ngIf="registerForm.get('last_name')?.getError('minlength')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Last Name minlength is 3</p>
+            <p *ngIf="registerForm.get('last_name')?.getError('maxlength')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Last Name maxlength is 10</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="border-bottom">
+          <input formControlName="age" class="form-control text-white bg-black border-0 rounded-0 shadow-none" type="number" placeholder="Age">
+          <div *ngIf="registerForm.get('age')?.touched && registerForm.get('age')?.errors">
+            <p *ngIf="registerForm.get('age')?.getError('required')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Age is required</p>
+            <p *ngIf="registerForm.get('age')?.getError('min')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Age min value is 16</p>
+            <p *ngIf="registerForm.get('age')?.getError('max')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Age max value is 100</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="border-bottom">
+          <input formControlName="email" class="form-control text-white bg-black border-0 rounded-0 shadow-none" type="email" placeholder="Email">
+          <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors">
+            <p *ngIf="registerForm.get('email')?.getError('required')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Email is required</p>
+            <p *ngIf="registerForm.get('email')?.getError('email')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Email format is invalid</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 pb-3">
+        <div class="border-bottom">
+          <input formControlName="password" class="form-control text-white bg-black border-0 rounded-0 shadow-none" type="password" placeholder="Password">
+          <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors">
+            <p *ngIf="registerForm.get('password')?.getError('required')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Password is required</p>
+            <p *ngIf="registerForm.get('password')?.getError('pattern')" class="ps-2 pb-1 text-danger text-start"><i class="fa-solid fa-triangle-exclamation"></i> Password is invalid</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="success || error" [ngClass]="{'text-danger': error, 'text-success': success}"><i class="fa-solid fa-triangle-exclamation"></i> {{error}}{{success}}</p>
+    <button [disabled]="registerForm.invalid || isLoading" type="submit" class="btn btn-outline-danger rounded-1 px-4 mt-3">
+      <span *ngIf="!isLoading">Sign Up</span>
+      <i *ngIf="isLoading" class="fa-solid fa-gear fa-spin"></i>
+    </button>
+  </form>
+</section>

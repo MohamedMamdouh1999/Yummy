@@ -1,0 +1,8 @@
+<a [routerLink]="['/details', meal['idMeal']]" class="text-black">
+  <div class="meal overflow-hidden rounded-1 position-relative">
+    <img *ngIf="meal['strMealThumb']" class="w-100" [src]="meal['strMealThumb']" [alt]="meal['strMeal']">
+    <div class="mealName px-2 d-flex justify-content-start align-items-center position-absolute">
+      <span class="mealTitle">{{meal['strMeal']}}</span>
+    </div>
+  </div>
+</a>

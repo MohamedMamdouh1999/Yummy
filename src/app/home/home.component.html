@@ -1,0 +1,12 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 1)" template="<img class='w-100 rounded-1' src='https://media.giphy.com/media/d05PVYaUl7DtCSE3ht/giphy-downsized-large.gif'/>"></ngx-spinner>
+<section>
+  <div class="row py-5 gy-4">
+    <div class="col-12">
+      <input [(ngModel)]="meal" class="form-control bg-black shadow-none rounded-1 text-white" type="search" placeholder="Search...">
+    </div>
+    <div class="col-md-4" *ngFor="let meal of listMeals|search:meal">
+      <app-meals [meal]="meal"></app-meals>
+    </div>
+  </div>
+</section>
+

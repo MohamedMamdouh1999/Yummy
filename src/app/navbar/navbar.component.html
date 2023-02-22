@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <img src="assets/IMGS/logo.png" alt="Yummy">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ps-lg-5 text-center mb-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a *ngIf="isLogin" class="nav-link" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isLogin" class="nav-link" [routerLink]="['/type', 'a']">Area</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isLogin" class="nav-link" [routerLink]="['/type', 'c']">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isLogin" class="nav-link" [routerLink]="['/type', 'i']">Ingredients</a>
+        </li>
+      </ul>
+      <ul class="icons px-0 d-flex flex-wrap justify-content-center align-items-center text-center ms-auto mb-2 mb-lg-0">
+        <li>
+          <i *ngIf="isLogin" class="fa-brands fa-facebook-f"></i>
+        </li>
+        <li>
+          <i *ngIf="isLogin" class="fa-brands fa-twitter"></i>
+        </li>
+        <li>
+          <i *ngIf="isLogin" class="fa-brands fa-instagram"></i>
+        </li>
+        <li>
+          <i *ngIf="isLogin" class="fa-brands fa-whatsapp"></i>
+        </li>
+      </ul>
+      <ul class="px-0 d-flex flex-wrap justify-content-center align-items-center text-center ps-lg-5 mb-auto mb-2 mb-lg-0">
+        <li class="pe-2 pb-sm-0 pb-1">
+          <a *ngIf="!isLogin" routerLink="login" class="btn btn-dark rounded-1">Login</a>
+        </li>
+        <li class="pb-sm-0 pb-1">
+          <a *ngIf="!isLogin" routerLink="register" class="btn btn-dark rounded-1">Register</a>
+        </li>
+        <li *ngIf="isLogin" class="pb-sm-0 pb-1">
+          <a (click)="logout()" routerLink="register" class="btn btn-dark rounded-1">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

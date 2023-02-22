@@ -1,0 +1,8 @@
+section {
+  background-image: url("../../assets/IMGS/404.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  height: calc(100vh - 56.42px);
+  width: 100%;
+}

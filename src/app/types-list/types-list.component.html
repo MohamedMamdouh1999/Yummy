@@ -1,0 +1,31 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 1)" template="<img class='w-100 rounded-1' src='https://media.giphy.com/media/d05PVYaUl7DtCSE3ht/giphy-downsized-large.gif'/>"></ngx-spinner>
+<section>
+  <div *ngIf="categories.length" class="row py-5 gy-4">
+    <div class="col-md-4" *ngFor="let meal of categories">
+      <a class="text-black" [routerLink]="['/type', type, meal['strCategory']]">
+        <div class="meal overflow-hidden rounded-1 position-relative">
+          <img *ngIf="meal['strCategoryThumb']" class="w-100" [src]="meal['strCategoryThumb']" [alt]="meal['strCategory']">
+          <div class="mealName px-2 d-flex justify-content-start align-items-center position-absolute">
+            <span class="mealTitle">{{meal['strCategory']}}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="main.length" class="row py-5 gy-4">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let item of main">
+      <div class="text-center">
+        <a [routerLink]="['/type', type, item[strTitle]]">
+          <i *ngIf="strTitle === 'strArea'" class="area fa-solid fa-earth-americas fa-5x text-danger"></i>
+          <i *ngIf="strTitle === 'strIngredient'" class="fa-solid fa-utensils fa-5x text-warning"></i>
+          <p class="area text-white fs-2">{{item[strTitle]}}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="mainMeals.length" class="row py-5 gy-4">
+    <div class="col-md-4" *ngFor="let meal of mainMeals">
+      <app-meals [meal]="meal"></app-meals>
+    </div>
+  </div>
+</section>

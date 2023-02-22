@@ -1,0 +1,89 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 1)" template="<img class='w-100 rounded-1' src='https://media.giphy.com/media/d05PVYaUl7DtCSE3ht/giphy-downsized-large.gif'/>"></ngx-spinner>
+<section>
+  <div class="row py-5 gy-4 text-white">
+    <div class="col-md-4">
+      <img class="w-100 rounded-1" [src]="mealDetails.strMealThumb" [alt]="mealDetails.strMeal">
+      <a class="w-100 btn btn-danger fs-5  rounded-1 my-2" target="_blank" [href]="mealDetails.strYoutube">Youtube</a>
+      <a class="w-100 btn btn-success fs-5 rounded-1" target="_blank" [href]="mealDetails.strSource">Source</a>
+    </div>
+    <div class="col-md-8">
+      <div class="row gy-4">
+        <div class="col-12">
+          <h1>{{mealDetails.strMeal}}</h1>
+          <div class="ps-5 pt-3">
+            <p class="specialColor">{{mealDetails.strInstructions}}</p>
+          </div>
+        </div>
+        <div class="col-12">
+          <h2>Details</h2>
+          <ul class="ps-5 pt-3">
+            <div class="row">
+              <li class="col-6 py-1 fs-5" *ngIf="mealDetails.strArea">Area :</li>
+              <li class="col-6 py-1 specialColor" *ngIf="mealDetails.strArea">{{mealDetails.strArea}}</li>
+              <li class="col-6 py-1 fs-5" *ngIf="mealDetails.strTags">Tags :</li>
+              <li class="col-6 py-1 specialColor" *ngIf="mealDetails.strTags">{{mealDetails.strTags}}</li>
+              <li class="col-6 py-1 fs-5" *ngIf="mealDetails.strCategory">Category :</li>
+              <li class="col-6 py-1 specialColor" *ngIf="mealDetails.strCategory">{{mealDetails.strCategory}}</li>
+              <li class="col-6 py-1 fs-5" *ngIf="mealDetails.strDrinkAlternate">Drink Alternate :</li>
+              <li class="col-6 py-1 specialColor" *ngIf="mealDetails.strDrinkAlternate">{{mealDetails.strDrinkAlternate}}</li>
+            </div>
+          </ul>
+        </div>
+        <div class="col-12">
+          <h2>Ingredient :</h2>
+          <ul class="ps-5 pt-3">
+            <div class="row">
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient1">{{mealDetails.strIngredient1}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient2">{{mealDetails.strIngredient2}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient3">{{mealDetails.strIngredient3}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient4">{{mealDetails.strIngredient4}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient5">{{mealDetails.strIngredient5}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient6">{{mealDetails.strIngredient6}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient7">{{mealDetails.strIngredient7}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient8">{{mealDetails.strIngredient8}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient9">{{mealDetails.strIngredient9}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient10">{{mealDetails.strIngredient10}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient11">{{mealDetails.strIngredient11}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient12">{{mealDetails.strIngredient12}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient13">{{mealDetails.strIngredient13}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient14">{{mealDetails.strIngredient14}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient15">{{mealDetails.strIngredient15}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient16">{{mealDetails.strIngredient16}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient17">{{mealDetails.strIngredient17}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient18">{{mealDetails.strIngredient18}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient19">{{mealDetails.strIngredient19}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strIngredient20">{{mealDetails.strIngredient20}}</li>
+            </div>
+          </ul>
+        </div>
+        <div class="col-12">
+          <h2>Measure :</h2>
+          <ul class="ps-5 pt-3">
+            <div class="row">
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure1">{{mealDetails.strMeasure1}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure2">{{mealDetails.strMeasure2}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure3">{{mealDetails.strMeasure3}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure4">{{mealDetails.strMeasure4}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure5">{{mealDetails.strMeasure5}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure6">{{mealDetails.strMeasure6}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure7">{{mealDetails.strMeasure7}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure8">{{mealDetails.strMeasure8}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure9">{{mealDetails.strMeasure9}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure10">{{mealDetails.strMeasure10}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure11">{{mealDetails.strMeasure11}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure12">{{mealDetails.strMeasure12}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure13">{{mealDetails.strMeasure13}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure14">{{mealDetails.strMeasure14}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure15">{{mealDetails.strMeasure15}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure16">{{mealDetails.strMeasure16}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure17">{{mealDetails.strMeasure17}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure18">{{mealDetails.strMeasure18}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure19">{{mealDetails.strMeasure19}}</li>
+              <li class="col-6 specialColor" *ngIf="mealDetails.strMeasure20">{{mealDetails.strMeasure20}}</li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
