@@ -23,6 +23,7 @@
       </div>
     </div>
     <p *ngIf="response" [ngClass]="{'text-success': response === 'success', 'text-danger': response !== 'success'}"><i class="fa-solid fa-triangle-exclamation"></i> {{response}}</p>
+    <p class="text-white">Not a member yet? <a class="text-danger" routerLink="/register">Create Account</a></p>
     <button [disabled]="loginForm.invalid || isLoading" type="submit" class="btn btn-outline-danger rounded-1 px-4 mt-3">
       <span *ngIf="!isLoading">Login</span>
       <i *ngIf="isLoading" class="fa-solid fa-gear fa-spin"></i>
